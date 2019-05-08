@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1043713935243",
+    "firebase_url": "https://boec-5a1be.firebaseio.com",
+    "project_id": "boec-5a1be",
+    "storage_bucket": "boec-5a1be.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043713935243:android:d0b9de55cfcaccac",
+        "android_client_info": {
+          "package_name": "com.example.boec"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043713935243-38fdm0aq1jkaremhb7h2r7qp64plc0d7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.boec",
+            "certificate_hash": "998e46b07c620e00e5f5c53a38e3df5165a9ce4e"
+          }
+        },
+        {
+          "client_id": "1043713935243-l2oj2scmd4g2ri3qm67c5r80j3f9863v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiCS-ZJnBHzu_doQcTwLFc_TJ-hTdNt1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043713935243-l2oj2scmd4g2ri3qm67c5r80j3f9863v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

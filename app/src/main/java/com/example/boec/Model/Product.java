@@ -1,7 +1,5 @@
 package com.example.boec.Model;
 
-import java.util.HashMap;
-
 public class Product {
     private String pname, description, image, category, pid;
     private Long price;

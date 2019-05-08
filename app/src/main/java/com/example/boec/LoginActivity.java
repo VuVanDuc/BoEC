@@ -58,11 +58,16 @@ public class LoginActivity extends AppCompatActivity {
             loadingBar.setMessage("please wait, we are checking your information");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
-            AllowAcessToAccount(username, password);
+            User user = new User.UserBuilder(username, password).build();
+            AllowAcessToAccount(user);
 
         }
     }
-    private void AllowAcessToAccount(final String username, final String password){
+    private void AllowAcessToAccount(User user){
+        String name = user.getName();
+        final String username = user.getUsername();
+        final String password = user.getPassword();
+        String address = user.getAddress();
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
         RootRef.addListenerForSingleValueEvent(new ValueEventListener() {

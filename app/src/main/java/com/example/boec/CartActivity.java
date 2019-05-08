@@ -102,7 +102,6 @@ public class CartActivity extends AppCompatActivity {
                                             intent.putExtra("pid",model.getPid());
                                             startActivity(intent);
                                         }else if(which==1){
-
                                             cartListRef.child("User View")
                                                     .child(Prevalent.currentOnlineUser.getUsername())
                                                     .child("product")
@@ -115,7 +114,7 @@ public class CartActivity extends AppCompatActivity {
                                                                 Toast.makeText(CartActivity.this, "Removed", Toast.LENGTH_SHORT).show();
                                                                 total-=model.getPrice()*model.getQuantity();
                                                                 txtTotal.setText("Total: "+ total.toString()+" vnd");
-//                                                                 Intent intent = new Intent(CartActivity.this,HomeActivity.class);
+//                                                                Intent intent = new Intent(CartActivity.this,HomeActivity.class);
 //                                                                startActivity(intent);
                                                             }
                                                         }

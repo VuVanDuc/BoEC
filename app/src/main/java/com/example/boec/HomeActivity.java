@@ -18,11 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.boec.Model.Product;
 import com.example.boec.Prevalent.Prevalent;
@@ -31,7 +28,6 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
@@ -45,17 +41,16 @@ public class HomeActivity extends AppCompatActivity
     private DatabaseReference ProductRef;
     private RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         ProductRef = FirebaseDatabase.getInstance().getReference().child("product");
-        Paper.init(this);
+        Paper.init(this)   ;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Home");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(null);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +72,6 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         View headerView = navigationView.getHeaderView(0);
-
         TextView userNameTextView = headerView.findViewById(R.id.user_profile_name);
         CircleImageView profileImageView = headerView.findViewById(R.id.user_profile_image);
         userNameTextView.setText(Prevalent.currentOnlineUser.getName());
@@ -88,15 +82,13 @@ public class HomeActivity extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
     }
 
-
-
     @Override
     protected void onStart() {
         super.onStart();
         FirebaseRecyclerOptions<Product> options =
                 new FirebaseRecyclerOptions.Builder<Product>()
-                        .setQuery(ProductRef,Product.class)
-                        .build();
+                .setQuery(ProductRef,Product.class)
+                .build();
         FirebaseRecyclerAdapter<Product, ProductViewHolder> adapter =
                 new FirebaseRecyclerAdapter<Product, ProductViewHolder>(options) {
                     @Override
@@ -165,10 +157,8 @@ public class HomeActivity extends AppCompatActivity
             Intent intent = new Intent(HomeActivity.this, CartActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_orders) {
-            Intent intent = new Intent(HomeActivity.this, SearchProductActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.nav_categories) {
 
+        } else if (id == R.id.nav_categories) {
 
         } else if (id == R.id.nav_setting) {
 

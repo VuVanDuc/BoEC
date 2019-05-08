@@ -43,6 +43,17 @@ public class User {
             this.address = address;
             return this;
         }
+
+        public UserBuilder password(String password){
+            this.password = password;
+            return this;
+        }
+
+        public UserBuilder username(String username){
+            this.username = username;
+            return this;
+        }
+
         public User build(){
             User u = new User(this);
             return u;
